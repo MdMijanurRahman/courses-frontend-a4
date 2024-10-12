@@ -6,30 +6,37 @@ export default function Navbar() {
   const { currentUser, logout } = useAuth();
 
   return (
-    <nav> 
+    <nav>
       <div className="flex justify-between items-center bg-zinc-500 ">
-      <div className='flex'>
-        <img src={logo} alt="Logo" className='w-10 h-10 text-center' />
-        <span className="ml-10 text-white-600 text-3xl">Mijan Training Institute: Learn for the betterment, learn for excellence.</span>
-      </div>
+        <div className='flex'>
+          <img src={logo} alt="Logo" className='w-10 h-10 text-center' />
+          <span className="ml-10 md:ml-2 text-white-600 text-3xl md:text-wrap">Mijan Training Institute: Learn for excellence.</span>
+        </div>
+        <div>
+          <Link to="/"> <button className="btn btn-outline btn-info">Home</button>
 
-      <div>
-        <Link to="/">Home</Link>
-        {currentUser && <Link to="/courses">Courses</Link>}
-      </div>
-      <div>
-        {!currentUser ? (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </>
-        ) : (
-          <>
-            <img src={currentUser.photoURL} alt={currentUser.displayName} className=" mx-auto h-20 w-20" />
-            <button onClick={logout}>Logout</button>
-          </>
-        )}
-      </div>
+
+
+          </Link> 
+          {currentUser && <Link to="/courses"><button className=" ml-2 btn btn-outline btn-info">Courses</button>
+            </Link>}
+        </div>
+        <div className="py-5">
+          {!currentUser ? (
+            <>
+              <Link to="/login"><button className="btn btn-outline btn-accent">Login</button></Link> 
+              <Link to="/register"><button className="ml-2 mr-2 btn btn-outline btn-accent">Register</button></Link>
+            </>
+          ) : (
+            <>
+              <img src={currentUser.photoURL} alt={currentUser.displayName} className=" mx-auto h-10 w-10 mr-20 md:m-15" />
+              <p className=" mx-auto mr-2">{currentUser.email}</p>
+              <button onClick={logout} className="mt-2 btn btn-outline btn-error ">Logout</button>
+              
+
+            </>
+          )}
+        </div>
       </div>
     </nav>
   );

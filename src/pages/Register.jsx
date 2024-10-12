@@ -20,22 +20,26 @@ export default function Register() {
 
   return (
     <div>
-      <h2>Register</h2>
+      <h2 className="mx-2 my-2">Please Register Yourself...</h2>
       {error && <p>{error}</p>}
       <form onSubmit={handleRegister}>
         <input
           type="email"
+          className="bg-slate-200 px-2 py-2 mx-2 my-2"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
         />
         <input
           type="password"
+          className="bg-slate-200 px-2 py-2 mx-2 my-2"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
-        />
-        <button type="submit">Register</button>
+        /><br/>
+        <button type="submit" className=" ml-2 btn btn-outline btn-success">Register</button>
+        
+
       </form>
     </div>
   );

@@ -1,10 +1,19 @@
 // import React from 'react';
-
+import './../../src/index.css'
+import ban from "./../assets/banner.jpg"
+import logo from './../assets/logo.jpeg'
 const Home = () => {
   return (
     <div>
       {/* Banner Section */}
-      <section className="banner-section">
+      <div className="relative w-full h-64">
+        <img src={ban} alt="Logo" className='w-full h-full object-hover' />
+        <div className="absolute inset-0 flex items-center justify-start p-10">
+          <h1 className="text-white text-3xl font-bold">Welcome to Mijan Training Institute</h1> <br />
+        </div>
+      </div>
+
+      {/* <section className="banner-section">
         <img
           src="https://via.placeholder.com/1500x500" // Replace with actual image URL
           alt="Banner"
@@ -12,7 +21,7 @@ const Home = () => {
         />
         <h1 className="text-4xl font-bold text-center mt-4">Welcome to Mijan Training Institute</h1>
         <p className="text-center mt-2">Learn from the best courses online</p>
-      </section>
+      </section> */}
 
       {/* How It Works Section */}
       <section className="how-it-works-section mt-10">
@@ -78,11 +87,14 @@ const Home = () => {
         <h2 className="text-2xl font-semibold text-center">About Us</h2>
         <div className="flex justify-center items-center mt-4">
           <img
-            src="https://via.placeholder.com/150" // Replace with actual image of Md. Mijanur Rahman Howlader
-            alt="Md. Mijanur Rahman Howlader"
+            src={logo} // Replace with actual image of Md. Mijanur Rahman Howlader
+            alt="Mijan Training Institute"
             className="rounded-full w-32 h-32"
           />
+
+{/* <img src= alt="Logo" className='w-10 h-10 text-center' /> */}
           <div className="ml-4">
+          <p className="text-lg font-semibold">Your Chief Mentor: </p>
             <p className="text-lg font-semibold">Md. Mijanur Rahman Howlader</p>
             <p>Upazila ICT Officer, Borhanuddin, Bhola</p>
           </div>
@@ -90,9 +102,8 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="footer mt-10 bg-gray-800 text-white text-center p-4">
-        <p>Mijan Training Institute</p>
-        <p>Contact: your-email@example.com</p>
+      <footer className="footer mt-10 bg-gray-800 text-white text-center p-4 flex justify-between">
+        <p>Contact: train_it@gmail.com</p>
         <p>Address: 123 Main St, Borhanuddin, Bhola</p>
         <div className="social-links mt-2">
           <a href="#" className="mx-2">

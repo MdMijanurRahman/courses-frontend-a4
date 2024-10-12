@@ -2,7 +2,7 @@
   "name": "courses-frontend-a4",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  
   "scripts": {
     "dev": "vite",
     "build": "vite build",

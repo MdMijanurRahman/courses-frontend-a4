@@ -26,6 +26,7 @@ export default function Login() {
     } catch (err) {
       setError("Failed to log in with Google");
     }
+  
   };
 
   const handleGitHubLogin = async () => {
@@ -40,26 +41,29 @@ export default function Login() {
 
   return (
     <div>
-      <h2>Login</h2>
+      <h2>Please Login : to access courses menu.</h2>
       {error && <p>{error}</p>}
       <form onSubmit={handleEmailLogin}>
         <input
           type="email"
+          className="bg-slate-200 px-2 py-2 mx-2 my-2"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
         />
         <input
           type="password"
+          className="bg-slate-200 px-2 py-2 mx-2 my-2"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
-        />
-        <button type="submit">Login with Email</button>
+        /> <br/>
+        <button type="submit" className=" ml-2 my-2 btn btn-outline btn-success">Email/Password Login</button>
+        
       </form>
-
-      <button onClick={handleGoogleLogin}>Login with Google</button>
-      <button onClick={handleGitHubLogin}>Login with GitHub</button>
+      <div></div>
+      <button onClick={handleGoogleLogin} className=" ml-2 my-2 btn btn-outline btn-success">Login with Google</button><br/>
+      <button onClick={handleGitHubLogin} className=" ml-2 my-2 btn btn-outline btn-success">Login with GitHub</button>
     </div>
   );
 }

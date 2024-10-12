@@ -1,47 +1,56 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { 
-  createUserWithEmailAndPassword, 
-  signInWithEmailAndPassword, 
   GoogleAuthProvider, 
   GithubAuthProvider, 
   signInWithPopup, 
-  signOut, 
-  onAuthStateChanged 
+  createUserWithEmailAndPassword, 
+  signInWithEmailAndPassword, 
+  onAuthStateChanged, 
+  signOut 
 } from "firebase/auth";
-import { auth } from "../firebaseConfig";
+import { auth } from "../firebaseConfig"; // Import from firebaseConfig.js
+import { Navigate } from "react-router-dom";
 
-const AuthContext = createContext(); // AuthContext created
+const AuthContext = createContext();
 
 export function useAuth() {
-  return useContext(AuthContext); // Hook to access context
+  return useContext(AuthContext);
 }
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const register = (email, password) => {
+  // Email/Password Register
+  function register(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
-  };
+  }
 
-  const login = (email, password) => {
+  // Email/Password Login
+  function login(email, password) {
+    
     return signInWithEmailAndPassword(auth, email, password);
-  };
+  }
 
-  const loginWithGoogle = () => {
+  // Google Sign-in
+  function loginWithGoogle() {
     const provider = new GoogleAuthProvider();
+    <Navigate to="/" />
     return signInWithPopup(auth, provider);
-  };
+  }
 
-  const loginWithGitHub = () => {
+  // GitHub Sign-in
+  function loginWithGitHub() {
     const provider = new GithubAuthProvider();
     return signInWithPopup(auth, provider);
-  };
+  }
 
-  const logout = () => {
+  // Logout
+  function logout() {
     return signOut(auth);
-  };
+  }
 
+  // Manage user state
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
