@@ -2,7 +2,6 @@
   "name": "courses-frontend-a4",
   "private": true,
   "version": "0.0.0",
-  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "daisyui": "^4.12.13",
     "firebase": "^10.14.1",
     "prop-types": "^15.8.1",

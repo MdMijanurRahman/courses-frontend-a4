@@ -36,7 +36,7 @@ const Home = () => {
       {/* Image Section */}
       <section className="image-section mt-10">
         <h2 className="text-2xl font-semibold text-center">Featured Courses</h2>
-        <div className="flex justify-between m-4 h-48 container items-center md:flex justify-around">
+        <div className="flex justify-between m-4 h-48 container items-center md:flex">
 
           <div>
             <img
@@ -128,10 +128,10 @@ const Home = () => {
         <p>Contact: train_it@gmail.com</p>
         <p>Address: 123 Main St, Borhanuddin, Bhola</p>
         <div className="social-links mt-2">
-          <a href="#" className="mx-2">
+          <a href="https://www.facebook.com/" className="mx-2">
             Facebook
           </a>
-          <a href="#" className="mx-2">
+          <a href="https://www.x.com/" className="mx-2">
             Twitter
           </a>
         </div>

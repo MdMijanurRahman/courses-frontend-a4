@@ -10,7 +10,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebaseConfig"; // Import from firebaseConfig.js
 import { Navigate } from "react-router-dom";
-
+// import { useNavigate } from "react-router-dom";
 const AuthContext = createContext();
 
 export function useAuth() {
@@ -20,6 +20,7 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  // const navigate = useNavigate(); 
 
   // Email/Password Register
   function register(email, password) {
@@ -35,7 +36,7 @@ export function AuthProvider({ children }) {
   // Google Sign-in
   function loginWithGoogle() {
     const provider = new GoogleAuthProvider();
-    <Navigate to="/" />
+    // <Navigate to="/" />
     return signInWithPopup(auth, provider);
   }
 
@@ -55,6 +56,10 @@ export function AuthProvider({ children }) {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       setLoading(false);
+      // if (user) {
+      //   // If the user is logged in, redirect to the home page
+      //   navigate("/courses");
+      // }
     });
     return unsubscribe;
   }, []);

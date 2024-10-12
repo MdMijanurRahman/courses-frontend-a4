@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Footer from "./Footer";
 
 const CourseDetails = () => {
   const { id } = useParams(); // Get course ID from URL
@@ -71,7 +72,7 @@ const CourseDetails = () => {
       </div>
       
     </div>
-    
+    <Footer/>
     </div>
     
     

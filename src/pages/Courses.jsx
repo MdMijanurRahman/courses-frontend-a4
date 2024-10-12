@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import Footer from "./Footer";
 
 export default function Courses() {
   const { currentUser } = useAuth();
@@ -18,7 +19,8 @@ export default function Courses() {
   }
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div>
+<div className="grid grid-cols-3 gap-4">
       
       {courses.map((course) => (
         
@@ -30,5 +32,8 @@ export default function Courses() {
         </div>
       ))}
     </div>
+    <Footer />
+    </div>
+    
   );
 }

@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
+// import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const { login, loginWithGoogle, loginWithGitHub } = useAuth(); // Use all three methods
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  // const navigate =useNavigate();
 
   const handleEmailLogin = async (e) => {
     e.preventDefault();
@@ -13,6 +15,7 @@ export default function Login() {
     try {
       await login(email, password);
       // Redirect after successful login
+      navigate("/courses");
     } catch (err) {
       setError("Failed to log in with Email/Password");
     }
@@ -23,6 +26,7 @@ export default function Login() {
     try {
       await loginWithGoogle();
       // Redirect after successful login
+      // navigate("/courses");
     } catch (err) {
       setError("Failed to log in with Google");
     }
@@ -33,6 +37,7 @@ export default function Login() {
     setError("");
     try {
       await loginWithGitHub();
+      // navigate("/courses");
       // Redirect after successful login
     } catch (err) {
       setError("Failed to log in with GitHub");

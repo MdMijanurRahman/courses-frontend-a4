@@ -7,7 +7,9 @@ export default function Navbar() {
 
   return (
     <nav>
-      <div className="flex justify-between items-center bg-slate-500 ">
+      {/* <div className="flex justify-between items-center bg-slate-500 "> */}
+      <div className="flex flex-col md:flex-row justify-between gap-4 bg-slate-500 ">
+      
         <div className='flex'>
           <img src={logo} alt="Logo" className='w-20 h-20 text-center' />
           <span className="ml-10 md:ml-2 text-white-600 text-3xl md:text-wrap">Mijan Training Institute: Learn for excellence.</span>
