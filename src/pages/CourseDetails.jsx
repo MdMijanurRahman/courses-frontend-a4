@@ -29,7 +29,8 @@ const CourseDetails = () => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+    <div>
+      <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
       <div className="bg-white shadow-lg rounded-lg max-w-3xl w-full p-6">
         
         <h1 className="text-3xl font-bold mb-4 text-gray-800">{course.title}</h1>
@@ -68,7 +69,13 @@ const CourseDetails = () => {
           </div>
         )}
       </div>
+      
     </div>
+    
+    </div>
+    
+    
+    
   );
 };
 

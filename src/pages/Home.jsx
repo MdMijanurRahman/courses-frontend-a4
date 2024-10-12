@@ -36,22 +36,44 @@ const Home = () => {
       {/* Image Section */}
       <section className="image-section mt-10">
         <h2 className="text-2xl font-semibold text-center">Featured Courses</h2>
-        <div className="flex justify-center mt-4">
-          <img
-            src="https://via.placeholder.com/300" // Placeholder for course image
-            alt="Course 1"
-            className="w-1/3 mx-2"
-          />
-          <img
-            src="https://via.placeholder.com/300" // Placeholder for course image
-            alt="Course 2"
-            className="w-1/3 mx-2"
-          />
-          <img
-            src="https://via.placeholder.com/300" // Placeholder for course image
-            alt="Course 3"
-            className="w-1/3 mx-2"
-          />
+        <div className="flex justify-between m-4 h-48 container items-center md:flex justify-around">
+
+          <div>
+            <img
+              src="https://live.staticflickr.com/65535/52413593240_e00326e727_o.png" // Placeholder for course image
+              alt="Course 3"
+              className="w-1/3 h-auto mx-2"
+            />
+            <h3>Complete ReactJS</h3>
+
+          </div>
+          <div>
+            <img
+              src="https://live.staticflickr.com/65535/52413665713_5977a693cb_o.png" // Placeholder for course image
+              alt="Course 1"
+              className="w-1/3 h-auto mx-2"
+            />
+            <h3>Web Design & Development</h3>
+          </div>
+          <div>
+            <img
+              src="https://coderstrustbd.com/wp-content/uploads/2021/06/GD.jpg" // Placeholder for course image
+              alt="Course 3"
+              className="w-1/3 h-auto mx-2"
+            />
+            <h3>Graphics Design</h3>
+
+          </div>
+          <div>
+            <img
+              src="https://coderstrustbd.com/wp-content/uploads/2021/06/dgm-n.jpg" // Placeholder for course image
+              alt="Course 2"
+              className="w-1/3 h-auto mx-2"
+            />
+            <h3>Digital Marketing</h3>
+          </div>
+
+
         </div>
       </section>
 
@@ -92,9 +114,9 @@ const Home = () => {
             className="rounded-full w-32 h-32"
           />
 
-{/* <img src= alt="Logo" className='w-10 h-10 text-center' /> */}
+          {/* <img src= alt="Logo" className='w-10 h-10 text-center' /> */}
           <div className="ml-4">
-          <p className="text-lg font-semibold">Your Chief Mentor: </p>
+            <p className="text-lg font-semibold">Your Chief Mentor: </p>
             <p className="text-lg font-semibold">Md. Mijanur Rahman Howlader</p>
             <p>Upazila ICT Officer, Borhanuddin, Bhola</p>
           </div>

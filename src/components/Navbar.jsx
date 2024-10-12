@@ -13,12 +13,12 @@ export default function Navbar() {
           <span className="ml-10 md:ml-2 text-white-600 text-3xl md:text-wrap">Mijan Training Institute: Learn for excellence.</span>
         </div>
         <div>
-          <Link to="/"> <button className="btn btn-outline btn-info">Home</button>
+          <Link to="/"> <button className="ml-2 btn btn-outline btn-info">Home</button>
 
 
 
           </Link> 
-          {currentUser && <Link to="/courses"><button className=" ml-2 btn btn-outline btn-info">Courses</button>
+          {currentUser && <Link to="/courses"><button className="ml-2 my-2 btn btn-outline btn-info">Courses</button>
             </Link>}
         </div>
         <div className="py-5">
