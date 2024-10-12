@@ -19,11 +19,14 @@ export default function Courses() {
 
   return (
     <div className="grid grid-cols-3 gap-4">
+      
       {courses.map((course) => (
-        <div key={course._id} className="card">
-          <h3>{course.title}</h3>
-          <p>{course.details}</p>
-          <Link to={`/courses/${course.course_id}`}>View Details</Link>
+        
+        <div key={course._id} className="card m-2 p-2">
+          <h1 className="text-3xl underline">{course.title}</h1><br/>
+          <p className="text-justify">{course.details.slice(0, 250)}...</p>
+          <Link to={`/courses/${course.course_id}`}> <button className=" py-2 px-2 m-2 btn btn-outline btn-info">View Details</button>
+          </Link>
         </div>
       ))}
     </div>
